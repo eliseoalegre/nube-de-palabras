@@ -78,14 +78,13 @@ function renderCloud() {
 function generateQR() {
   const url = window.location.origin + '/respond';
   qrCode.innerHTML = '';
-  QRCode.toCanvas(document.createElement('canvas'), url, {
+  new QRCode(qrCode, {
+    text: url,
     width: 200,
-    margin: 1,
-    color: { dark: '#ffffff', light: '#00000000' }
-  }, (err, canvas) => {
-    if (!err) {
-      qrCode.appendChild(canvas);
-    }
+    height: 200,
+    colorDark: '#ffffff',
+    colorLight: 'transparent',
+    correctLevel: QRCode.CorrectLevel.M
   });
   qrUrl.textContent = url;
 }
