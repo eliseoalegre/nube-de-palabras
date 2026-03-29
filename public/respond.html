@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responder</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="respond-page">
+
+  <!-- Pregunta -->
+  <header id="header">
+    <h1 id="question-text">Esperando que el profesor configure la pregunta...</h1>
+  </header>
+
+  <!-- Formulario de respuesta -->
+  <main id="respond-form" class="hidden">
+    <div class="input-group">
+      <input type="text" id="answer-input" placeholder="Tu respuesta..." autocomplete="off" maxlength="100">
+      <button id="btn-send">Enviar</button>
+    </div>
+    <p id="feedback" class="feedback hidden">Enviado!</p>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/respond.js"></script>
+</body>
+</html>

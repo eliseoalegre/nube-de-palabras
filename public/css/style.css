@@ -1,0 +1,252 @@
+/* === Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0f0f1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* === Header === */
+#header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#question-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex: 1;
+  color: #ffffff;
+}
+
+/* === Botón NEW === */
+.btn-new {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-new:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* === Formulario de pregunta === */
+.question-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.question-form input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.question-form input:focus {
+  border-color: rgba(78, 205, 196, 0.6);
+}
+
+.question-form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-accept,
+.btn-cancel {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-accept {
+  background: #4ECDC4;
+  color: #0f0f1a;
+}
+
+.btn-accept:hover {
+  background: #3dbdb5;
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.btn-cancel:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* === Display Page - Main Content === */
+#main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 5rem);
+  padding: 1.5rem;
+}
+
+#qr-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+#qr-code canvas {
+  border-radius: 8px;
+}
+
+.qr-url {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+}
+
+#cloud-container {
+  flex: 1;
+  width: 100%;
+  min-height: 200px;
+  position: relative;
+}
+
+#word-cloud {
+  width: 100%;
+  height: 100%;
+}
+
+/* === Respond Page === */
+.respond-page #header {
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-bottom: none;
+}
+
+.respond-page #question-text {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.respond-page main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: rgba(78, 205, 196, 0.6);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+#btn-send {
+  padding: 0.9rem 1.8rem;
+  background: #4ECDC4;
+  color: #0f0f1a;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+#btn-send:hover {
+  background: #3dbdb5;
+}
+
+#btn-send:active {
+  transform: scale(0.97);
+}
+
+.feedback {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #4ECDC4;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Waiting message === */
+#waiting-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  text-align: center;
+}
+
+#waiting-message p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.4);
+}
