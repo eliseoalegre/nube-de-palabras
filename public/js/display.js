@@ -10,7 +10,6 @@ const btnCancel = document.getElementById('btn-cancel');
 const mainContent = document.getElementById('main-content');
 const qrContainer = document.getElementById('qr-container');
 const qrCode = document.getElementById('qr-code');
-const qrUrl = document.getElementById('qr-url');
 const cloudContainer = document.getElementById('cloud-container');
 const wordCloudCanvas = document.getElementById('word-cloud');
 
@@ -86,7 +85,6 @@ function generateQR() {
     colorLight: 'transparent',
     correctLevel: QRCode.CorrectLevel.M
   });
-  qrUrl.textContent = url;
 }
 
 // --- UI States ---

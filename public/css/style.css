@@ -137,13 +137,6 @@ body {
   border-radius: 8px;
 }
 
-.qr-url {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
-  font-family: monospace;
-}
-
 #cloud-container {
   flex: 1;
   width: 100%;
